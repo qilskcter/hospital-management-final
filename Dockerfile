@@ -6,4 +6,4 @@ RUN chmod +x mvnw && ./mvnw -B clean package -DskipTests
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/hospital-management-0.0.1-SNAPSHOT.jar app.jar
-CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]
+CMD ["sh", "-c", "java -Duser.timezone=Asia/Ho_Chi_Minh -Dserver.port=${PORT:-8080} -jar app.jar"]

@@ -1275,12 +1275,12 @@
             if (grp) {
                 grp.style.display = 'block';
                 const sel = document.getElementById('dChonTaiKhoan');
-                sel.innerHTML = '<option value="">-- Đang tải tài khoản... --</option>';
+                sel.innerHTML = '<option value="" hidden disabled selected>-- Chọn tài khoản liên kết --</option>';
                 try {
                     const res = await fetch('/api/v1/taikhoan/unlinked');
                     if (res.ok) {
                         const accounts = await res.json();
-                        sel.innerHTML = '<option value="">-- Chọn tài khoản Admin đã cấp --</option>';
+                        sel.innerHTML = '<option value="" hidden disabled selected>-- Chọn tài khoản liên kết --</option>';
                         if (accounts.length === 0) {
                             sel.innerHTML = '<option value="">(Không có tài khoản mới nào đang chờ tạo hồ sơ)</option>';
                         } else {
